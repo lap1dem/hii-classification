@@ -28,4 +28,4 @@ def plot_confusion_matrix(y_test, y_pred, classes, save_path,
     plt.tight_layout()
     plt.ylabel('True class')
     plt.xlabel('Predicted class')
-    plt.savefig(save_path, dpi=dpi)
+    plt.savefig(save_path, dpi=dpi, bbox_inches='tight')

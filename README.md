@@ -1,4 +1,9 @@
-#Goals
+# Goals
 
-#Dataset
+# Dataset
 
+# Model
+
+# Results
+
+# Further steps
