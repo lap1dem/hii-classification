@@ -22,7 +22,7 @@ of objects (second sample). The second sample includes 3 classes of objects: Gal
 of two samples was removed from the second sample. 
 The final dataset includes approx. 445000 objects.
 
-<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/piechart.png?raw=true" height="250" align="center">
+<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/piechart.png?raw=true" height="300" align="center">
 
 
 # Model
@@ -32,7 +32,7 @@ four target classes - HII, Other Galaxies, QSO, Stars. The model also includes 3
 layers with 12, 24 and 48 neurons respectively (see scheme below). 
 The cross entropy and Adam optimizer were used to calculate and minimize the errors in the training.
 
-<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/scheme.png?raw=true" height="350" align="center">
+<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/scheme.png?raw=true" height="400" align="center">
 
 
 
@@ -43,7 +43,7 @@ would be more appropriate, which is 77.8% (see confusion matrix below). Comparin
 to other works in this field, the result is satisfying but could be improved.
 
 
-<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/confusion.png?raw=true" height="350" align="center">
+<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/confusion.png?raw=true" height="400" align="center">
 
 
 
