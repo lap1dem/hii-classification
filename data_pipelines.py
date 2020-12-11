@@ -44,5 +44,3 @@ def gal_tt_split(frac = 0.8, random_state = 172):
     y_test = X_test.pop('class')
 
     return X_train, y_train, X_test, y_test
-
-gal_tt_split()
