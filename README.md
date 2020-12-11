@@ -22,8 +22,8 @@ of objects (second sample). The second sample includes 3 classes of objects: Gal
 of two samples was removed from the second sample. 
 The final dataset includes approx. 445000 objects.
 
+<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/piechart.png?raw=true" height="250" align="center">
 
-![alt text](https://github.com/lap1dem/hii-classification/blob/master/figures/piechart.png?raw=true)
 
 # Model
 A neural network was built using `tensorflow`. The input layer takes six parameters - 
@@ -32,7 +32,8 @@ four target classes - HII, Other Galaxies, QSO, Stars. The model also includes 3
 layers with 12, 24 and 48 neurons respectively (see scheme below). 
 The cross entropy and Adam optimizer were used to calculate and minimize the errors in the training.
 
-![alt text](https://github.com/lap1dem/hii-classification/blob/master/figures/scheme.png?raw=true)
+<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/scheme.png?raw=true" height="350" align="center">
+
 
 
 # Results
@@ -41,7 +42,9 @@ But the idea is to build a classifier for HII regions, so the precision of HII r
 would be more appropriate, which is 77.8% (see confusion matrix below). Comparing
 to other works in this field, the result is satisfying but could be improved.
 
-![alt text](https://github.com/lap1dem/hii-classification/blob/master/figures/confusion.png?raw=true)
+
+<img src="https://github.com/lap1dem/hii-classification/blob/master/figures/confusion.png?raw=true" height="350" align="center">
+
 
 
 # Further steps
