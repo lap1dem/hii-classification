@@ -34,14 +34,29 @@ def load_catalogue():
     return pd.concat([hii_data, sdss_data])
 
 
-def gal_tt_split(frac = 0.8, random_state = 172):
+def gal_tvt_split(fracs = (0.8, 0.1, 0.1), random_state = 172):
     data = load_catalogue().drop(columns=['ra', 'dec', 'z']).reset_index(drop=True)
     data = data.sample(frac=1, random_state=random_state+42)
     data['class'] = pd.Categorical(data['class'])
 
-    X_train = data.sample(frac=0.8, random_state=random_state)
-    X_test = data.drop(X_train.index)
+    X_train = data.sample(frac=fracs[0], random_state=random_state)
     y_train = X_train.pop('class')
+    X_rest = data.drop(X_train.index)
+    X_val = X_rest.sample(frac=fracs[1]/(1-fracs[0]), random_state=random_state+42)
+    y_val = X_val.pop('class')
+    X_test = X_rest.drop(X_val.index)
+    y_test = X_test.pop('class')
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
+
+def gal_tt_split(frac = 0.9, random_state = 172):
+    data = load_catalogue().drop(columns=['ra', 'dec', 'z']).reset_index(drop=True)
+    data = data.sample(frac=1, random_state=random_state+42)
+    data['class'] = pd.Categorical(data['class'])
+
+    X_train = data.sample(frac=frac, random_state=random_state)
+    y_train = X_train.pop('class')
+    X_test = data.drop(X_train.index)
     y_test = X_test.pop('class')
 
     return X_train, y_train, X_test, y_test

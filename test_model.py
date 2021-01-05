@@ -1,16 +1,18 @@
-import pickle
 import os
 
 from visualization import *
 from models import get_compiled_model
 import config as c
+from data_pipelines import gal_tvt_split
 
 model = get_compiled_model()
 model.load_weights(c.checkpoint_path)
 
-cat = pickle.load(open('categories.p', 'rb'))
-X_test = pickle.load(open('xtest.p', 'rb'))
-y_test = pickle.load(open('ytest.p', 'rb'))
+X_train, y_train, X_val, y_val, X_test, y_test = gal_tvt_split(fracs=(0.9, 0.05, 0.05))
+cat = y_train.cat.categories
+y_train = y_train.cat.codes
+y_val = y_val.cat.codes
+y_test = y_test.cat.codes
 
 loss, acc = model.evaluate(X_test, y_test, verbose=2)
 print(f"Restored model, accuracy: {100 * acc:3.2f}%")
